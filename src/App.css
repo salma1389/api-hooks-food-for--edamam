@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start; 
+  background-color: rgb(214, 238, 198);
+  padding: 10px;
+  /* height: 100px; */
+  /* margin-left: 20px; */
+}
+
+h3{
+  margin: 30px;
+}
+
+.menuCard{
+  display: flex;
+ flex-direction: column;
+ padding: 10px;
+ margin-left: 20px;
+  box-shadow: 0 3px 6px 0 #555;
+  margin-bottom: 20px;
+  /* height: 190px;
+  width: 290px; */
+}
+
+.card{
+
+    margin-top: 30px;
+   display:flex;
+   direction: row;
+   padding: 30px;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;  
+    margin-left: 50px;
+    margin-right: 50px;
+   
+}
+
+h1{
+  font-size: 35px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:rgb(102, 196, 164)
+}
+
+h2 {
+  font-size: 13px;
+}
+
