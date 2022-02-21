@@ -1,7 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid';
+import './RecipeDetails.css'
 
 const RecipeDetails = ({recipe}) => {
   const [data, setData] = useState([recipe.recipe])
@@ -10,9 +10,11 @@ const RecipeDetails = ({recipe}) => {
   const {label}=useParams()
 
 // console.log(res)
+
+// Display the data of one item when didupdate (lifecycle) the label
 useEffect(() => {
  const getTheone=async()=>{
-  const res= await data.find(el=>el.label==label)
+  const res= await data.find(el=>el.label===label)
   setResult(res)
  }
  getTheone()
@@ -21,27 +23,26 @@ useEffect(() => {
   
 
   return (
-    <div >
+    <div  >
+   
       {
-        result&&<div>
-
-<h1>{result.label}</h1>
+        result&&<div className='details'>
 <img src={result.image} alt="" />
+<div >
+<h1>{result.label}</h1>
     {result.ingredients.map (ingredient=>{
-      return (
-        
-        
-        <ul key={uuidv4() }>
+      return ( 
+        <ul className='list' key={uuidv4() }>
            <li > {ingredient.text}</li>
-    <li >weight- {ingredient.weight}</li>
+    <li className='weight'>weight- {ingredient.weight}</li>
             </ul>
-           
            )
           })}
           </div>
-        }
           </div>
-  
+        }
+        
+          </div>
     
   )
 }

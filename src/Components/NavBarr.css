@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start; 
+    background-color: rgb(214, 238, 198);
+    padding: 10px;
+    /* height: 100px; */
+    /* margin-left: 20px; */
+  }
+  
+  .globalNav{
+    background-color: rgb(214, 238, 198);
+    
+  }
+  
+  h3{
+    margin: 30px;
+    color: black;
+  }

@@ -1,0 +1,32 @@
+footer {
+    border-top: 1px solid #000;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:rgb(214, 238, 198);
+    /* height:60px; */
+  }
+  
+  footer p {
+    font-weight: 700;
+    max-width: 600px;
+    margin-right: 0.5rem;
+  }
+
+  .contact{
+      display: flex;
+      flex-direction: column;
+     
+  }
+
+  h3{
+      text-decoration: underline;
+      font-weight: 600;
+      margin-bottom: 1px; 
+  }
+
+  h4{
+    margin-top: 0.5px; 
+
+  }

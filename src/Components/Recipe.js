@@ -1,24 +1,72 @@
-import React, { useState } from 'react'
+import { Button } from '@mui/material';
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom';
-import Ingredients from './Ingredients';
+import ButtonAddRemove from './ButtonAddRemove';
+import ButtonCartQuantity from './ButtonCartQuantity';
+import './Recipe.css'
 
-import RecipeDetails from './RecipeDetails';
+// import Ingredients from './Ingredients';
+
+// import RecipeDetails from './RecipeDetails';
 
 const Recipe = ({recipe}) => {
-    const {label,image,url,ingredients,id}=recipe.recipe;
-    const [show, setShow] = useState(false)
-  return (
-   <div className="card" style={{display:"flex"}}>
-
-    <div className='menuCard'  >
+    const {label,image,url,ingredients}=recipe.recipe;
+    const [count, setCount] = useState(0)
+   
+    const [result, setResult] = useState(0)
     
-        <Link to={`/RecipeDetails/${label}`}> 
+   
+    // const [show, setShow] = useState(false)
+
+    const handelAdd=()=>{
+      setCount(count+1) 
+    }
+
+    const handelRemove=()=>{
+      setCount(count-1)
+      
+    }
+    
+   
+    const handelchange=()=>{
+      setResult(count)
+      // setShow(true)
+    }
+    // console.log('count',count)
+    // console.log('result',result)
+
+
+  
+  return (
+<div>
+
+
+   <div className="card" style={{display:"flex"}}>
+      
+
+    <div className='menuCard'>
+    
+        
     
         <img src={image} alt={label} />
         <h2>{label}</h2>
+        <div className='btn'>
+        <Link to={`/RecipeDetails/${label}`}>
+        <Button variant="contained" color="success">
+        See details 
+        </Button>
+        </Link>
+        <ButtonAddRemove quantity={count} handelAdd={handelAdd} handelRemove={handelRemove}/>
+        <ButtonCartQuantity quantity={count}/>
+        <Button onClick={handelchange}>done</Button>
+        {/* {show==='true'? { */}
         
-        <button style={{marginLeft:'20px'}}> See details </button> </Link>
-        <a href={url} style={{marginRight:"10px"}} > url </a>
+      
+      
+       
+        </div>
+       <button style={{marginTop:"10px"}}> <a href={url}  > url </a></button>
+
 
        {/* to affiche the ingredient under the card item  */}
 
@@ -30,7 +78,7 @@ const Recipe = ({recipe}) => {
      
     
     </div>
-   
+    </div>
   )
 }
 

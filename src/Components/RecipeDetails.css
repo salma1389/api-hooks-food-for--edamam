@@ -1,0 +1,23 @@
+.details{
+    display: flex;
+    flex-direction:row;
+    margin-right: 300px;
+    margin-left: 300px;
+    margin-top: 60px;
+    box-shadow: 0 3px 6px 0 #555;
+    height: 600px;
+   overflow: scroll;
+
+   
+}
+
+.list{
+    list-style: none;
+    font-size: 19px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.weight{
+    color: rgb(62, 221, 168);
+    font-size: 18px;
+}
